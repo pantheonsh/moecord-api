@@ -20,7 +20,7 @@ var (
 )
 
 func Load() {
-	b, err := ioutil.ReadFile("assets/pokedex.json")
+	b, err := ioutil.ReadFile("moedex/pokedex.json")
 
 	if err != nil {
 		log.Fatalln("Failed to load Pokedex data", err)
