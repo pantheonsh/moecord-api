@@ -4,6 +4,8 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"log"
+	"path"
+	"strconv"
 )
 
 type Moemon struct {
@@ -31,4 +33,10 @@ func Load() {
 	if err != nil {
 		log.Fatalln("Failed to parse Pokedex data", err)
 	}
+}
+
+func GetSprite(id int) ([]byte, error) {
+	b, err := ioutil.ReadFile(path.Join("assets/sprites/", strconv.Itoa(id)+".png"))
+
+	return b, err
 }
